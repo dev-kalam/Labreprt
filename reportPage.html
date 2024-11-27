@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .image {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .image img {
+            width: 400px;
+            height: 100px;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .subject p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 5px 0;
+            padding-left: 50px;
+        }
+
+        .print-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .print-button button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .print-button button:hover {
+            background-color: #0056b3;
+        }
+
+        .main {
+            padding-top: 40px;
+            padding-left: 50px;
+        }
+
+        .main p {
+            padding-left: 100px;
+            line-height: 1.7;
+        }
+        .date {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image">
+        <img src="https://raw.githubusercontent.com/dev-kalam/images/main/logo1.png" alt="University Logo">
+    </div>
+    <div class="title">
+        <h1>Lab Report - <span id="assignmentNo"></span></h1>
+    </div>
+    <div class="subject">
+        <p>Experiment on <span id="topic"></span></p>
+        <p>Course Name: <span id="courseName"></span></p>
+        <p>Course Code: <span id="courseCode"></span></p>
+    </div>
+    <div class="main">
+        <h2>Submitted to</h2>
+        <p>
+            <span id="teacherName"></span><br>
+            <span id="designation"></span><br>
+            Dept. of <span id="departmentTeacher"></span><br>
+            Metropolitan University, Sylhet
+        </p>
+        <h2>Submitted by</h2>
+        <p>
+            <span id="studentName"></span><br>
+            ID: <span id="studentId"></span><br>
+            Batch: <span id="batch"></span><br>
+            Section: <span id="section"></span><br>
+            Dept. of <span id="departmentStudent"></span><br>
+            Metropolitan University, Sylhet
+        </p>
+    </div>
+    <p class="date">Submission Date: <span id="submissionDate"></span></p>
+    <div class="print-button">
+        <button onclick="window.print()">Print</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('assignmentNo').textContent = params.get('assignmentNo');
+        document.getElementById('topic').textContent = params.get('topic');
+        document.getElementById('courseName').textContent = params.get('courseName');
+        document.getElementById('courseCode').textContent = params.get('courseCode');
+        document.getElementById('teacherName').textContent = params.get('teacherName');
+        document.getElementById('designation').textContent = params.get('designation');
+        document.getElementById('departmentTeacher').textContent = params.get('departmentTeacher');
+        document.getElementById('studentName').textContent = params.get('studentName');
+        document.getElementById('studentId').textContent = params.get('studentId');
+        document.getElementById('batch').textContent = params.get('batch');
+        document.getElementById('section').textContent = params.get('section');
+        document.getElementById('departmentStudent').textContent = params.get('departmentStudent');
+        document.getElementById('submissionDate').textContent = params.get('submissionDate');
+    </script>
+</body>
+</html>
